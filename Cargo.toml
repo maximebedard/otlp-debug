@@ -1,0 +1,15 @@
+[package]
+name = "otlp-debug"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+opentelemetry = { version = "0.21.0", features = ["metrics", "trace"] }
+opentelemetry_sdk = { version = "0.21.2", features = ["rt-tokio"] }
+opentelemetry-otlp = { version = "0.14", default-features = false, features = ["grpc-tonic", "metrics", "trace", "logs"] }
+tokio = { version = "1.35.1", features = ["macros", "rt", "rt-multi-thread", "time"] }
+tracing = "0.1.40"
+tracing-opentelemetry = "0.22.0"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter", "fmt"] }
